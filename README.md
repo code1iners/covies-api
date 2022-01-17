@@ -23,7 +23,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Details : Get the primary TV show details by id.
 - [x] Images : Get the images that belong to a TV show.
 - [x] Keywords : Get the keywords that have been added to a TV show.
-- [ ] Latests : Get the most newly created TV show. This is a live response and will continuously change.
+- [x] Latests : Get the most newly created TV show. This is a live response and will continuously change.
 - [x] Populars : Get a list of the current popular TV shows on TMDB. This list updates daily.
 - [ ] Reviews : Get the reviews for a TV show.
 - [ ] Similars : Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
