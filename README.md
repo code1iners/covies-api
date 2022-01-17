@@ -28,7 +28,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Reviews : Get the reviews for a TV show.
 - [x] Similars : Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
 - [x] Top rated : Get a list of the top rated TV shows on TMDB.
-- [ ] Videos : Get the videos that have been added to a TV show.
+- [x] Videos : Get the videos that have been added to a TV show.
 
 ## Others.
 
