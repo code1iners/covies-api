@@ -20,3 +20,10 @@ export const getMovieRequest = () => {
 
   return moviesRequest;
 };
+
+// Common query string.
+export const getDefaultArguments = () => {
+  return new URLSearchParams({
+    api_key: process.env.TMDB_KEY,
+  });
+};

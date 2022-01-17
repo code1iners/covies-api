@@ -3,11 +3,11 @@ import { gql } from "apollo-server-core";
 export default gql`
   type PopularResponse {
     ok: Boolean!
-    data: [Popular]
+    data: [MoviePopular]
     error: SimpleError
   }
 
-  type Popular {
+  type MoviePopular {
     poster_path: String
     adult: Boolean
     overview: String
@@ -25,6 +25,6 @@ export default gql`
   }
 
   type Query {
-    populars(page: Int): PopularResponse!
+    moviePopulars(page: Int): PopularResponse!
   }
 `;

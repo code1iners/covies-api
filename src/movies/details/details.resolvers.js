@@ -1,26 +1,21 @@
-import { getMovieRequest } from "../../utils/axiosUtils";
+import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    moviePopulars: async (_, { page = 1 }) => {
+    movieDetail: async (_, { movieId }) => {
       try {
         // Init request.
         const request = getMovieRequest();
 
         // Init arguments.
-        const queryString = new URLSearchParams({
-          api_key: process.env.TMDB_KEY,
-          page,
-        });
+        const args = getDefaultArguments();
 
         // Data fetch.
-        const {
-          status,
-          statusText,
-          data: { results },
-        } = await request.get(`/movie/popular?${queryString.toString()}`);
+        const { status, statusText, data } = await request.get(
+          `movie/${movieId}?${args.toString()}`
+        );
 
-        // Check response status
+        // Response valid check.
         if (status !== 200) {
           return {
             ok: false,
@@ -33,10 +28,10 @@ export default {
 
         return {
           ok: true,
-          data: results,
+          data,
         };
       } catch (error) {
-        console.error("[populars]", error);
+        console.error("[detail]", error);
         return {
           ok: false,
           error: {
