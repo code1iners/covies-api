@@ -7,10 +7,12 @@ import { graphqlUploadExpress } from "graphql-upload";
 import logger from "morgan";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { typeDefs, resolvers } from "./schema";
+import { initAxios } from "./utils/axiosUtils";
 
 // Declared server port.
 const PORT = process.env.PORT;
 
+// Run server.
 runServer();
 
 /**
@@ -21,6 +23,9 @@ runServer();
  * ### Run server method.
  */
 async function runServer() {
+  // Initialize axios.
+  initAxios();
+
   // Declared express app.
   const app = express();
   // Declared http server.
@@ -49,6 +54,7 @@ async function runServer() {
     path: "/graphql",
   });
 
+  // Listening server.
   await new Promise((resolve) => httpServer.listen({ port: PORT }, resolve));
   if (process.env.NODE_ENV === "production") {
     console.info(`Server running.`);
