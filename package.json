@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple movie API server.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node ./src/server.js --delay 1"
   },
   "keywords": [
     "movies",
@@ -11,5 +11,13 @@
     "graphql"
   ],
   "author": "Codeliner96 <codeliner96@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.8"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
