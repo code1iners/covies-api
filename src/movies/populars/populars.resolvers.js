@@ -18,7 +18,7 @@ export default {
           status,
           statusText,
           data: { results },
-        } = await request.get(`/movie/popular?${queryString.toString()}`);
+        } = await request.get(`/popular?${queryString.toString()}`);
 
         // Check response status
         if (status !== 200) {

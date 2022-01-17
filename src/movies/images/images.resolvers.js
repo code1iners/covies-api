@@ -9,7 +9,7 @@ export default {
         const args = getDefaultArguments();
 
         const { status, statusText, data } = await request.get(
-          `movie/${movieId}/images?${args.toString()}`
+          `/${movieId}/images?${args.toString()}`
         );
 
         if (status !== 200) {

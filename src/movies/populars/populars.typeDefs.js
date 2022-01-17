@@ -1,12 +1,6 @@
 import { gql } from "apollo-server-core";
 
 export default gql`
-  type PopularResponse {
-    ok: Boolean!
-    data: [MoviePopular]
-    error: SimpleError
-  }
-
   type MoviePopular {
     poster_path: String
     adult: Boolean
@@ -15,13 +9,26 @@ export default gql`
     genre_ids: [Int]
     id: Int
     original_title: String
-    original_tanguage: String
+    original_language: String
     title: String
     backdrop_path: String
     popularity: Float
     vote_count: Int
     video: Boolean
     vote_average: Float
+  }
+
+  type MoviePopularData {
+    page: Int
+    results: [MoviePopular]
+    total_results: Int
+    total_pages: Int
+  }
+
+  type PopularResponse {
+    ok: Boolean!
+    data: MoviePopularData
+    error: SimpleError
   }
 
   type Query {

@@ -12,7 +12,7 @@ export default {
 
         // Data fetch.
         const { status, statusText, data } = await request.get(
-          `movie/${movieId}/videos?${args.toString()}`
+          `/${movieId}/videos?${args.toString()}`
         );
 
         // Response is invalid?

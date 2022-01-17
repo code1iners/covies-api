@@ -1,23 +1,23 @@
-import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
+import { getDefaultArguments, getTvRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieReviews: async (_, { movieId }) => {
+    TvPopulars: async (_, { page = 1 }) => {
       try {
         // Init request.
-        const request = getMovieRequest();
+        const request = getTvRequest();
 
         // Init arguments.
         const args = getDefaultArguments();
+        args.append("page", page);
 
         // Data fetch.
         const { status, statusText, data } = await request.get(
-          `/${movieId}/reviews?${args.toString()}`
+          `/popular?${args.toString()}`
         );
 
-        // Response is invalid?
+        // Check response status
         if (status !== 200) {
-          console.error("[movieReviews]", statusText);
           return {
             ok: false,
             error: {
@@ -32,7 +32,7 @@ export default {
           data,
         };
       } catch (error) {
-        console.error("[movieReviews]", error);
+        console.error("[populars]", error);
         return {
           ok: false,
           error: {

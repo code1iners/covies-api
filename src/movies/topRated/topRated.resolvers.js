@@ -15,7 +15,7 @@ export default {
 
         // Data fetch.
         const { status, statusText, data } = await request.get(
-          `movie/top_rated?${args.toString()}`
+          `/top_rated?${args.toString()}`
         );
 
         // Response is invalid?

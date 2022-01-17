@@ -11,7 +11,7 @@ export default {
         if (region) args.append("region", region);
 
         const { status, statusText, data } = await request.get(
-          `movie/upcoming?${args.toString()}`
+          `/upcoming?${args.toString()}`
         );
 
         // Response is invalid?

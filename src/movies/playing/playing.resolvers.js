@@ -15,7 +15,7 @@ export default {
 
         // Data fetch.
         const { status, statusText, data } = await request.get(
-          `movie/now_playing?${args.toString()}`
+          `/now_playing?${args.toString()}`
         );
 
         // Response is invalid?
