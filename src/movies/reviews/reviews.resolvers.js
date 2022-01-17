@@ -2,7 +2,7 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieKeywords: async (_, { movieId }) => {
+    movieReviews: async (_, { movieId }) => {
       try {
         // Init request.
         const request = getMovieRequest();
@@ -12,12 +12,12 @@ export default {
 
         // Data fetch.
         const { status, statusText, data } = await request.get(
-          `movie/${movieId}/keywords?${args.toString()}`
+          `movie/${movieId}/reviews?${args.toString()}`
         );
 
         // Response is invalid?
         if (status !== 200) {
-          console.error("[movieKeywords]".statusText);
+          console.error("[movieReviews]", statusText);
           return {
             ok: false,
             error: {
@@ -32,7 +32,7 @@ export default {
           data,
         };
       } catch (error) {
-        console.error("[movieKeywords]".error);
+        console.error("[movieReviews]", error);
         return {
           ok: false,
           error: {
