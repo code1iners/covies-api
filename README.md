@@ -21,7 +21,7 @@ Simple movie & tv contents API server powered by Graphql.
 
 - [x] Credits : Get the credits (cast and crew) that have been added to a TV show.
 - [x] Details : Get the primary TV show details by id.
-- [ ] Images : Get the images that belong to a TV show.
+- [x] Images : Get the images that belong to a TV show.
 - [ ] Keywords : Get the keywords that have been added to a TV show.
 - [ ] Latests : Get the most newly created TV show. This is a live response and will continuously change.
 - [x] Populars : Get a list of the current popular TV shows on TMDB. This list updates daily.
