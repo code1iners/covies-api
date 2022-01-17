@@ -1,0 +1,15 @@
+{
+  "name": "covies-api",
+  "version": "1.0.0",
+  "description": "Simple movie API server.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "movies",
+    "api",
+    "graphql"
+  ],
+  "author": "Codeliner96 <codeliner96@gmail.com>",
+  "license": "MIT"
+}
