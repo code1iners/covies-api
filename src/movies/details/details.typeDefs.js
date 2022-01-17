@@ -13,25 +13,25 @@ export default gql`
     name: String
   }
 
-  type ProductionCompanie {
+  type MovieDetailProductionCompany {
     id: Int
     logo_path: String
     name: String
     origin_country: String
   }
 
-  type ProductionCountries {
+  type MovieDetailProductionCountries {
     iso_3166_1: String
     name: String
   }
 
-  type SpokenLanguage {
+  type MovieDetailSpokenLanguage {
     english_name: String
     iso_639_1: String
     name: String
   }
 
-  type MovieDetail {
+  type MovieDetailData {
     adult: Boolean
     backdrop_path: String
     belongs_to_collection: MovieDetailBelongsToCollection
@@ -45,12 +45,12 @@ export default gql`
     overview: String
     popularity: Float
     poster_path: String
-    production_companies: [ProductionCompanie]
-    production_countries: [ProductionCountries]
+    production_companies: [MovieDetailProductionCompany]
+    production_countries: [MovieDetailProductionCountries]
     release_date: String
     revenue: Int
     runtime: Int
-    spoken_languages: [SpokenLanguage]
+    spoken_languages: [MovieDetailSpokenLanguage]
     status: String
     tagline: String
     title: String
@@ -61,7 +61,7 @@ export default gql`
 
   type MovieDetailResponse {
     ok: Boolean
-    data: MovieDetail
+    data: MovieDetailData
     error: SimpleError
   }
 
