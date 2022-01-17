@@ -26,7 +26,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Latests : Get the most newly created TV show. This is a live response and will continuously change.
 - [x] Populars : Get a list of the current popular TV shows on TMDB. This list updates daily.
 - [x] Reviews : Get the reviews for a TV show.
-- [ ] Similars : Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
+- [x] Similars : Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
 - [ ] Top rated : Get a list of the top rated TV shows on TMDB.
 - [ ] Videos : Get the videos that have been added to a TV show.
 
