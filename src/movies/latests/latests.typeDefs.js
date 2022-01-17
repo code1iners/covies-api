@@ -24,7 +24,7 @@ export default gql`
     name: String
   }
 
-  type MovieLatestsData {
+  type MovieLatestData {
     adult: Boolean
     backdrop_path: String
     budges: Int
@@ -50,13 +50,13 @@ export default gql`
     vote_count: Int
   }
 
-  type MovieLatestsResponse {
+  type MovieLatestResponse {
     ok: Boolean!
     error: SimpleError
-    data: MovieLatestsData
+    data: MovieLatestData
   }
 
   type Query {
-    movieLatests: MovieLatestsResponse!
+    movieLatest: MovieLatestResponse!
   }
 `;

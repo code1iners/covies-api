@@ -2,7 +2,7 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieLatests: async () => {
+    movieLatest: async () => {
       try {
         // Init request.
         const request = getMovieRequest();
@@ -17,7 +17,7 @@ export default {
 
         // Response is invalid?
         if (status !== 200) {
-          console.error("[movieLatests]", statusText);
+          console.error("[movieLatest]", statusText);
           return {
             ok: false,
             error: {
@@ -32,7 +32,7 @@ export default {
           data,
         };
       } catch (error) {
-        console.error("[movieLatests]", error);
+        console.error("[movieLatest]", error);
         return {
           ok: false,
           error: {

@@ -7,6 +7,7 @@ let tvRequest;
 export const initAxios = () => {
   // Initialize movies request.
   moviesRequest = getMovieRequest();
+  tvRequest = getTvRequest();
 };
 
 /**
@@ -21,6 +22,8 @@ export const getMovieRequest = () => {
       },
     });
   }
+
+  return moviesRequest;
 };
 
 /**
