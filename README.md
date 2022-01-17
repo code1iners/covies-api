@@ -16,6 +16,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Top rated : Get the top rated movies on TMDB.
 - [x] Upcomings : Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
 - [x] Videos : Get the videos that have been added to a movie.
+- [ ] Providers : Returns a list of the watch provider (OTT/streaming) data we have available for movies. You can specify a watch_region param if you want to further filter the list by country.
 
 ## TV.
 
@@ -29,6 +30,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Similars : Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
 - [x] Top rated : Get a list of the top rated TV shows on TMDB.
 - [x] Videos : Get the videos that have been added to a TV show.
+- [ ] Providers : Returns a list of the watch provider (OTT/streaming) data we have available for TV series. You can specify a watch_region param if you want to further filter the list by country.
 
 ## Others.
 
