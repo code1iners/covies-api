@@ -1,13 +1,13 @@
 import axios from "axios";
 
 // Requests.
-let moviesRequest;
-let tvRequest;
+let moviesRequest, tvRequest, providerRequest;
 
 export const initAxios = () => {
   // Initialize movies request.
   moviesRequest = getMovieRequest();
   tvRequest = getTvRequest();
+  providerRequest = getProviderRequest();
 };
 
 /**
@@ -40,6 +40,22 @@ export const getTvRequest = () => {
   }
 
   return tvRequest;
+};
+
+/**
+ * ### Getting providers request.
+ */
+export const getProviderRequest = () => {
+  if (!providerRequest) {
+    providerRequest = axios.create({
+      baseURL: `${process.env.TMDB_BASE_URI}/watch/providers`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  return providerRequest;
 };
 
 // Common query string.
