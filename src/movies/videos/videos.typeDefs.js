@@ -21,7 +21,7 @@ export default gql`
 
   type MovieVideosResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: MovieVideosData
   }
 

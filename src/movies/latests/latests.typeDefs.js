@@ -52,7 +52,7 @@ export default gql`
 
   type MovieLatestResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: MovieLatestData
   }
 

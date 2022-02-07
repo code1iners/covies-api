@@ -62,7 +62,7 @@ export default gql`
   type MovieDetailResponse {
     ok: Boolean
     data: MovieDetailData
-    error: SimpleError
+    error: CovieSimpleError
   }
 
   type Query {

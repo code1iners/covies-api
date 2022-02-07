@@ -13,7 +13,7 @@ export default gql`
 
   type TvKeywordsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TvKeywordsData
   }
 

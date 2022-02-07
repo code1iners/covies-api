@@ -26,7 +26,7 @@ export default gql`
 
   type TvTopRatedResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TvTopRatedData
   }
 

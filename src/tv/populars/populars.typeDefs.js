@@ -27,7 +27,7 @@ export default gql`
   type TvPopularResponse {
     ok: Boolean!
     data: TvPopularData
-    error: SimpleError
+    error: CovieSimpleError
   }
 
   type Query {

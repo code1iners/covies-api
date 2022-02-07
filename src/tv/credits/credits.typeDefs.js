@@ -36,7 +36,7 @@ export default gql`
 
   type TvCreditsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TvCreditsData
   }
 

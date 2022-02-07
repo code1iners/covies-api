@@ -26,7 +26,7 @@ export default gql`
 
   type TvSimilarsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TvSimilarsData
   }
 

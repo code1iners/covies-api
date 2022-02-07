@@ -47,7 +47,7 @@ export default gql`
 
   type TvLatestResponse {
     ok: Boolean
-    error: SimpleError
+    error: CovieSimpleError
     data: TvLatestData
   }
 

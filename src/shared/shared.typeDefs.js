@@ -1,17 +1,12 @@
 import { gql } from "apollo-server-core";
 
 export default gql`
-  type SimpleResponse {
-    ok: Boolean!
-    error: String
-  }
-
-  type SimpleError {
+  type CovieSimpleError {
     code: Int
     message: String
   }
 
   type Query {
-    hello: String
+    CovieHello: String
   }
 `;

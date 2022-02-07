@@ -27,7 +27,7 @@ export default gql`
 
   type MovieTopRatedResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: MovieTopRatedData
   }
 

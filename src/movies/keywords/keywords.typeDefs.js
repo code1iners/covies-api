@@ -13,7 +13,7 @@ export default gql`
 
   type MovieKeywordsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: MovieKeywords
   }
 

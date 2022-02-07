@@ -18,7 +18,7 @@ export default gql`
   type MovieCreditsResponse {
     ok: Boolean!
     data: MovieCredits
-    error: SimpleError
+    error: CovieSimpleError
   }
 
   type Query {

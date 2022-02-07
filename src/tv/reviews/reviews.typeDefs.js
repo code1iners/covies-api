@@ -28,7 +28,7 @@ export default gql`
 
   type TvReviewsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TvReviewsData
   }
 

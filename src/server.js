@@ -3,6 +3,7 @@ require("dotenv").config();
 import http from "http";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
+import { buildSubgraphSchema } from "@apollo/subgraph";
 import { graphqlUploadExpress } from "graphql-upload";
 import logger from "morgan";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
@@ -31,10 +32,14 @@ async function runServer() {
   // Declared http server.
   const httpServer = http.createServer(app);
 
-  // Declared apollo server.
-  const apolloServer = new ApolloServer({
+  const schema = buildSubgraphSchema({
     typeDefs,
     resolvers,
+  });
+
+  // Declared apollo server.
+  const apolloServer = new ApolloServer({
+    schema,
     context: async (ctx) => {},
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });

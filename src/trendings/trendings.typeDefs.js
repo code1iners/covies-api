@@ -27,7 +27,7 @@ export default gql`
 
   type TrendingsResponse {
     ok: Boolean!
-    error: SimpleError
+    error: CovieSimpleError
     data: TrendingsData
   }
 
