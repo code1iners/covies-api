@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "export NODE_ENV=development&& nodemon --exec babel-node ./src/server.js --delay 1",
     "introspect:local": "rover subgraph introspect http://localhost:3001/graphql > ./src/graphql/generated/schema.graphql",
-    "introspect:dev": "rover subgraph introspect https://covies-development.herokuapp.com/graphql > ./src/graphql/generated/schema.graphql",
     "publish:local": "rover subgraph publish cateway-production@current --name covies --routing-url http://localhost:3001/graphql --schema ./src/graphql/generated/schema.graphql",
-    "publish:dev": "rover subgraph publish cateway-production@current --name covies --routing-url https://covies-development.herokuapp.com/graphql --schema ./src/graphql/generated/schema.graphql",
     "build": "babel src --out-dir build",
     "start": "node build/server"
   },
