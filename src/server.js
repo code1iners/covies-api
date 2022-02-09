@@ -34,7 +34,6 @@ import { initEnvironment } from "./utils/envUtils";
     schema,
     context: async (ctx) => {},
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-    introspection: true,
   });
 
   await apolloServer.start();
