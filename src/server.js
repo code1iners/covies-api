@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 import http from "http";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
@@ -9,21 +7,15 @@ import logger from "morgan";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { typeDefs, resolvers } from "./schema";
 import { initAxios } from "./utils/axiosUtils";
-
-// Declared server port.
-const PORT = process.env.PORT;
-
-// Run server.
-runServer();
-
-/**
- * Methods.
- */
+import { initEnvironment } from "./utils/envUtils";
 
 /**
  * ### Run server method.
  */
-async function runServer() {
+(async () => {
+  // Initialize server environment.
+  initEnvironment();
+
   // Initialize axios.
   initAxios();
 
@@ -60,12 +52,14 @@ async function runServer() {
   });
 
   // Listening server.
-  await new Promise((resolve) => httpServer.listen({ port: PORT }, resolve));
+  await new Promise((resolve) =>
+    httpServer.listen({ port: process.env.PORT }, resolve)
+  );
   if (process.env.NODE_ENV === "production") {
     console.info(`Server running.`);
   } else {
     console.info(
-      `Server running at http://localhost:${PORT}${apolloServer.graphqlPath}.`
+      `Server running at http://localhost:${process.env.PORT}${apolloServer.graphqlPath}.`
     );
   }
-}
+})();
