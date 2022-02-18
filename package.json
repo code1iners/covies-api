@@ -4,10 +4,8 @@
   "description": "Simple movie API server.",
   "scripts": {
     "dev": "export NODE_ENV=development&& nodemon --exec ts-node ./src/server --ext ts,js --delay 1",
-    "introspect:local": "rover subgraph introspect http://localhost:3001/graphql > ./src/graphql/generated/schema.graphql",
-    "publish:local": "rover subgraph publish cateway-development-f6hth@current --name covies --routing-url http://localhost:3001/graphql --schema ./src/graphql/generated/schema.graphql",
-    "introspect:dev": "rover subgraph introspect https://covies-development.herokuapp.com/graphql > ./src/graphql/generated/schema.graphql",
-    "publish:dev": "rover subgraph publish cateway-development-f6hth@current --name covies --routing-url https://covies-development.herokuapp.com/graphql --schema ./src/graphql/generated/schema.graphql",
+    "introspect": "rover subgraph introspect http://localhost:3001/graphql > ./src/graphql/generated/schema.graphql",
+    "publish": "rover subgraph publish cateway-development-f6hth@current --name covies --routing-url https://covies-development.herokuapp.com/graphql --schema ./src/graphql/generated/schema.graphql",
     "build": "tsc",
     "start": "node build/server"
   },
