@@ -4,10 +4,10 @@ import { mergeResolvers, mergeTypeDefs } from "@graphql-tools/merge";
 
 // Load typeDefs.
 export const typeDefs = mergeTypeDefs(
-  loadFilesSync(path.join(__dirname, "/**/*.typeDefs.js"))
+  loadFilesSync(path.join(__dirname, "/**/*.typeDefs.{ts,js}"))
 );
 
 // Load resolvers.
 export const resolvers = mergeResolvers(
-  loadFilesSync(path.join(__dirname, "/**/*.resolvers.js"))
+  loadFilesSync(path.join(__dirname, "/**/*.resolvers.{ts,js}"))
 );

@@ -10,7 +10,7 @@ export default {
           `/${tvId}/images?${args.toString()}`
         );
         if (status !== 200) {
-          console.log("[tvImages]", statusText);
+          console.error("[tvImages]", statusText);
           return {
             ok: false,
             error: {
@@ -25,7 +25,7 @@ export default {
           data,
         };
       } catch (error) {
-        console.log("[tvImages]", error);
+        console.error("[tvImages]", error);
         return {
           ok: false,
           error: {

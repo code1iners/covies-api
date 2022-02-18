@@ -4,7 +4,7 @@ type CovieSimpleError {
 }
 
 type Query {
-  CovieHello: String
+  covieHello: String
   trendings(mediaType: String!, timeWindow: String!): TrendingsResponse!
   movieCredits(movieId: Int!): MovieCreditsResponse!
   movieDetail(movieId: Int!): MovieDetailResponse!

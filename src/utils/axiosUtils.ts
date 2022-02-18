@@ -1,9 +1,12 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
+import { URLSearchParams } from "url";
 
 // Requests.
-let moviesRequest, tvRequest, providerRequest;
+let moviesRequest: AxiosInstance,
+  tvRequest: AxiosInstance,
+  providerRequest: AxiosInstance;
 
-export const initAxios = () => {
+export const initAxios = (): void => {
   // Initialize movies request.
   moviesRequest = getMovieRequest();
   tvRequest = getTvRequest();
@@ -13,7 +16,7 @@ export const initAxios = () => {
 /**
  * ### Getting movie request.
  */
-export const getMovieRequest = () => {
+export const getMovieRequest = (): AxiosInstance => {
   if (!moviesRequest) {
     moviesRequest = axios.create({
       baseURL: `${process.env.TMDB_BASE_URI}/movie`,
@@ -29,7 +32,7 @@ export const getMovieRequest = () => {
 /**
  * ### Getting tv request.
  */
-export const getTvRequest = () => {
+export const getTvRequest = (): AxiosInstance => {
   if (!tvRequest) {
     tvRequest = axios.create({
       baseURL: `${process.env.TMDB_BASE_URI}/tv`,
@@ -45,7 +48,7 @@ export const getTvRequest = () => {
 /**
  * ### Getting providers request.
  */
-export const getProviderRequest = () => {
+export const getProviderRequest = (): AxiosInstance => {
   if (!providerRequest) {
     providerRequest = axios.create({
       baseURL: `${process.env.TMDB_BASE_URI}/watch/providers`,
@@ -59,8 +62,8 @@ export const getProviderRequest = () => {
 };
 
 // Common query string.
-export const getDefaultArguments = () => {
+export const getDefaultArguments = (): URLSearchParams => {
   return new URLSearchParams({
-    api_key: process.env.TMDB_KEY,
+    api_key: String(process.env.TMDB_KEY),
   });
 };

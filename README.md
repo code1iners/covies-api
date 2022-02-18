@@ -17,6 +17,7 @@ Simple movie & tv contents API server powered by Graphql.
 - [x] Upcomings : Get a list of upcoming movies in theatres. This is a release type query that looks for all movies that have a release type of 2 or 3 within the specified date range.
 - [x] Videos : Get the videos that have been added to a movie.
 - [x] Providers : Returns a list of the watch provider (OTT/streaming) data we have available for movies. You can specify a watch_region param if you want to further filter the list by country.
+- [x] Recommendations : Get a list of recommended movies for a movie.
 
 ## TV.
 

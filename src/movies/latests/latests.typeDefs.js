@@ -29,7 +29,7 @@ export default gql`
     backdrop_path: String
     budges: Int
     genres: [MovieLatestGenre]
-    hompage: String
+    homepage: String
     id: Int
     imdb_id: String
     original_language: String
