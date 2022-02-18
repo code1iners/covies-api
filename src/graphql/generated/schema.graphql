@@ -14,6 +14,7 @@ type Query {
   movieNowPlaying(page: Int, language: String, region: String): MovieNowPlayingResponse!
   moviePopulars(page: Int): PopularResponse!
   movieProviders: MovieProvidersResponse!
+  movieRecommendations(movieId: Int!, page: Int, language: String): RecommendationResponse!
   movieReviews(movieId: Int!): MovieReviewsResponse!
   movieSimilars(movieId: Int!): MovieSimilarsResponse!
   movieTopRated(page: Int, language: String, region: String): MovieTopRatedResponse!
@@ -222,7 +223,7 @@ type MovieLatestData {
   backdrop_path: String
   budges: Int
   genres: [MovieLatestGenre]
-  hompage: String
+  homepage: String
   id: Int
   imdb_id: String
   original_language: String
@@ -322,6 +323,36 @@ type MovieProvidersResponse {
   ok: Boolean!
   error: CovieSimpleError
   data: MovieProvidersData
+}
+
+type RecommendationResult {
+  poster_path: String
+  adult: Boolean
+  overview: String
+  release_date: String
+  genre_ids: [Int]
+  id: Int
+  original_title: String
+  original_language: String
+  title: String
+  backdrop_path: String
+  popularity: Int
+  vote_count: Int
+  video: Boolean
+  vote_average: Int
+}
+
+type RecommendationData {
+  page: Int
+  results: [RecommendationResult]
+  total_pages: Int
+  total_results: Int
+}
+
+type RecommendationResponse {
+  ok: Boolean!
+  data: RecommendationData
+  error: CovieSimpleError
 }
 
 type MovieAuthorDetail {

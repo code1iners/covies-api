@@ -8,7 +8,7 @@
     "publish:local": "rover subgraph publish cateway-development-f6hth@current --name covies --routing-url http://localhost:3001/graphql --schema ./src/graphql/generated/schema.graphql",
     "introspect:dev": "rover subgraph introspect https://covies-development.herokuapp.com/graphql > ./src/graphql/generated/schema.graphql",
     "publish:dev": "rover subgraph publish cateway-development-f6hth@current --name covies --routing-url https://covies-development.herokuapp.com/graphql --schema ./src/graphql/generated/schema.graphql",
-    "build": "babel src --out-dir build",
+    "build": "tsc",
     "start": "node build/server"
   },
   "keywords": [
