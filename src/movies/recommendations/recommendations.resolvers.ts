@@ -3,11 +3,15 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 import { Resolvers } from "./../../types/shared/shared.d";
 const resolvers: Resolvers = {
   Query: {
-    movieRecommendations: async (_, { movieId }: MovieRecommendationsProps) => {
+    movieRecommendations: async (
+      _,
+      { movieId, language = "ko" }: MovieRecommendationsProps
+    ) => {
       try {
         const request = getMovieRequest();
 
         const args = getDefaultArguments();
+        if (language) args.append("language", language);
 
         const { status, statusText, data } = await request.get(
           `/${movieId}/recommendations?${args.toString()}`

@@ -2,11 +2,17 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieImages: async (_, { movieId }) => {
+    movieImages: async (
+      _,
+      { movieId, language = "ko", includeImageLanguage }
+    ) => {
       try {
         const request = getMovieRequest();
 
         const args = getDefaultArguments();
+        if (language) args.append("language", language);
+        if (includeImageLanguage)
+          args.append("include_image_language", includeImageLanguage);
 
         const { status, statusText, data } = await request.get(
           `/${movieId}/images?${args.toString()}`

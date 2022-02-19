@@ -2,7 +2,7 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieUpcomings: async (_, { page = 1, language, region }) => {
+    movieUpcomings: async (_, { page = 1, language = "ko", region }) => {
       try {
         const request = getMovieRequest();
         const args = getDefaultArguments();

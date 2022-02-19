@@ -2,7 +2,7 @@ import { getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    moviePopulars: async (_, { page = 1 }) => {
+    moviePopulars: async (_, { page = 1, language = "ko", region }) => {
       try {
         // Init request.
         const request = getMovieRequest();
@@ -11,6 +11,8 @@ export default {
         const queryString = new URLSearchParams({
           api_key: process.env.TMDB_KEY,
           page,
+          ...(language && { language }),
+          ...(region && { region }),
         });
 
         // Data fetch.

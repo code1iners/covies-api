@@ -2,13 +2,14 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieCredits: async (_, { movieId }) => {
+    movieCredits: async (_, { movieId, language }) => {
       try {
         // Init request.
         const request = getMovieRequest();
 
-        // Init argunemts.
+        // Init arguments.
         const args = getDefaultArguments();
+        if (language) args.append("language", language);
 
         // Data fetch.
         const { status, statusText, data } = await request.get(

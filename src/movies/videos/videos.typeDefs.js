@@ -26,6 +26,6 @@ export default gql`
   }
 
   type Query {
-    movieVideos(movieId: Int!): MovieVideosResponse!
+    movieVideos(movieId: Int!, language: String): MovieVideosResponse!
   }
 `;

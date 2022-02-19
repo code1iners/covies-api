@@ -32,6 +32,6 @@ export default gql`
   }
 
   type Query {
-    moviePopulars(page: Int): PopularResponse!
+    moviePopulars(page: Int, language: String, region: String): PopularResponse!
   }
 `;

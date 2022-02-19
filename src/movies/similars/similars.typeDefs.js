@@ -32,6 +32,6 @@ export default gql`
   }
 
   type Query {
-    movieSimilars(movieId: Int!): MovieSimilarsResponse!
+    movieSimilars(movieId: Int!, language: String): MovieSimilarsResponse!
   }
 `;

@@ -34,6 +34,10 @@ export default gql`
   }
 
   type Query {
-    movieImages(movieId: Int!): MovieImagesResponse!
+    movieImages(
+      movieId: Int!
+      language: String
+      includeImageLanguage: String
+    ): MovieImagesResponse!
   }
 `;

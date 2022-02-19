@@ -2,13 +2,16 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieDetail: async (_, { movieId }) => {
+    movieDetail: async (_, { movieId, language = "ko", appendToResponse }) => {
       try {
         // Init request.
         const request = getMovieRequest();
 
         // Init arguments.
         const args = getDefaultArguments();
+        if (language) args.append("language", language);
+        if (appendToResponse)
+          args.append("append_to_response", appendToResponse);
 
         // Data fetch.
         const { status, statusText, data } = await request.get(

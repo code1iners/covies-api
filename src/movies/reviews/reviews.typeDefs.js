@@ -33,6 +33,6 @@ export default gql`
   }
 
   type Query {
-    movieReviews(movieId: Int!): MovieReviewsResponse!
+    movieReviews(movieId: Int!, language: String): MovieReviewsResponse!
   }
 `;

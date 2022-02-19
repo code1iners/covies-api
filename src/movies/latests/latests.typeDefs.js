@@ -57,6 +57,6 @@ export default gql`
   }
 
   type Query {
-    movieLatest: MovieLatestResponse!
+    movieLatest(language: String): MovieLatestResponse!
   }
 `;

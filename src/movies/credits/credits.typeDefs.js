@@ -22,6 +22,6 @@ export default gql`
   }
 
   type Query {
-    movieCredits(movieId: Int!): MovieCreditsResponse!
+    movieCredits(movieId: Int!, language: String): MovieCreditsResponse!
   }
 `;
