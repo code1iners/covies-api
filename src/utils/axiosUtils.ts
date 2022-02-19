@@ -4,13 +4,15 @@ import { URLSearchParams } from "url";
 // Requests.
 let moviesRequest: AxiosInstance,
   tvRequest: AxiosInstance,
-  providerRequest: AxiosInstance;
+  providerRequest: AxiosInstance,
+  configurationsRequest: AxiosInstance;
 
 export const initAxios = (): void => {
   // Initialize movies request.
   moviesRequest = getMovieRequest();
   tvRequest = getTvRequest();
   providerRequest = getProviderRequest();
+  configurationsRequest = getConfigurationsRequest();
 };
 
 /**
@@ -59,6 +61,22 @@ export const getProviderRequest = (): AxiosInstance => {
   }
 
   return providerRequest;
+};
+
+/**
+ * ### Getting providers request.
+ */
+export const getConfigurationsRequest = (): AxiosInstance => {
+  if (!configurationsRequest) {
+    configurationsRequest = axios.create({
+      baseURL: `${process.env.TMDB_BASE_URI}/configuration`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  return configurationsRequest;
 };
 
 // Common query string.

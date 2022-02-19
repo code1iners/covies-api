@@ -1,9 +1,17 @@
-type CovieSimpleError {
-  code: Int
-  message: String
+type ConfigurationLanguagesData {
+  iso_639_1: String
+  english_name: String
+  name: String
+}
+
+type ConfigurationLanguagesResponse {
+  ok: Boolean!
+  error: CovieSimpleError
+  data: [ConfigurationLanguagesData]
 }
 
 type Query {
+  configurationLanguages: ConfigurationLanguagesResponse!
   covieHello: String
   trendings(mediaType: String!, timeWindow: String!): TrendingsResponse!
   movieCredits(movieId: Int!): MovieCreditsResponse!
@@ -31,6 +39,11 @@ type Query {
   tvSimilars(tvId: Int!): TvSimilarsResponse!
   tvTopRated: TvTopRatedResponse!
   tvVideos(tvId: Int!): TvVideosResponse!
+}
+
+type CovieSimpleError {
+  code: Int
+  message: String
 }
 
 type Trendings {

@@ -52,14 +52,12 @@ import { initEnvironment } from "./utils/envUtils";
   });
 
   // Listening server.
-  await new Promise((resolve) =>
-    httpServer.listen({ port: process.env.PORT }, resolve)
+
+  await httpServer.listen({ port: process.env.PORT });
+
+  console.info(
+    `Server running at ${
+      process.env.NODE_ENV === "production" ? "" : "http://localhost:"
+    }${process.env.PORT}${apolloServer.graphqlPath}.`
   );
-  if (process.env.NODE_ENV === "production") {
-    console.info(`Server running.`);
-  } else {
-    console.info(
-      `Server running at http://localhost:${process.env.PORT}${apolloServer.graphqlPath}.`
-    );
-  }
 })();

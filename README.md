@@ -37,6 +37,10 @@ Simple movie & tv contents API server powered by Graphql.
 
 - [x] Trendings : Get the daily or weekly trending items. The daily trending list tracks items over the period of a day while items have a 24 hour half life. The weekly list tracks items over a 7 day period, with a 7 day half life.
 
+## Configurations.
+
+- [x] Languages : Get the list of languages (ISO 639-1 tags) used throughout TMDB.
+
 ## Sources.
 
 - TMDB API (https://www.themoviedb.org).
