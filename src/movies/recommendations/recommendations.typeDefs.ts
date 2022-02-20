@@ -12,10 +12,10 @@ export default gql`
     original_language: String
     title: String
     backdrop_path: String
-    popularity: Int
+    popularity: Float
     vote_count: Int
     video: Boolean
-    vote_average: Int
+    vote_average: Float
   }
 
   type RecommendationData {
