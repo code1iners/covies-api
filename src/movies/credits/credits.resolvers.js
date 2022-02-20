@@ -2,7 +2,7 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieCredits: async (_, { movieId, language }) => {
+    movieCredits: async (_, { movieId, language = "ko" }) => {
       try {
         // Init request.
         const request = getMovieRequest();
