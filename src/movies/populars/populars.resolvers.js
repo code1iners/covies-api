@@ -16,11 +16,9 @@ export default {
         });
 
         // Data fetch.
-        const {
-          status,
-          statusText,
-          data: { results },
-        } = await request.get(`/popular?${queryString.toString()}`);
+        const { status, statusText, data } = await request.get(
+          `/popular?${queryString.toString()}`
+        );
 
         // Check response status
         if (status !== 200) {
@@ -35,7 +33,7 @@ export default {
 
         return {
           ok: true,
-          data: results,
+          data,
         };
       } catch (error) {
         console.error("[populars]", error);
