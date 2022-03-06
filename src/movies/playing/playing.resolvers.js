@@ -2,7 +2,7 @@ import { getDefaultArguments, getMovieRequest } from "../../utils/axiosUtils";
 
 export default {
   Query: {
-    movieNowPlaying: async (_, { page = 1, language, region }) => {
+    movieNowPlaying: async (_, { page = 1, language = "ko", region }) => {
       try {
         // Init request.
         const request = getMovieRequest();
@@ -10,7 +10,7 @@ export default {
         // Init arguments.
         const args = getDefaultArguments();
         args.append("page", page);
-        if (language) args.append("language", language);
+        args.append("language", language);
         if (region) args.append("region", region);
 
         // Data fetch.
